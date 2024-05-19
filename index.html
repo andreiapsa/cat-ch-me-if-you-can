@@ -12,10 +12,18 @@
 <div id="game-intro">
     <img src="./images/logo.png" alt="catch me if you can logo" class="logo img" />
     <br />
-    <h2>Instructions</h2>
-    <p>Insert instructions here</p>
-    <button id="start-button">Start Game</button>
+    <h2 id="instructions-h2">Instructions</h2>
+    <p id="instructions-intro">Neji, like every cat, <b>hates</b> vacuum cleaners and needs <b>your</b> help to run away from them.</p>
+    <ul id="instructions-list">
+        <li>Use the arrows (top, bottom, left and right) to move around</li>  
+        <li>Neji, the cat, needs to stay away from the vacuum cleaners</li>
+        <li>If a vacuum cleaner hits Neji, the cat, he'll lose one life</li>
+        <li>Neji, the cat, should eat the cans of food to get more energy</li>
+        <li>If Neji, the cat, eats a can of food, he'll get one extra life</li>
+        <li>The game is over when Neji, the cat, has no more lives</li>
+    </ul>
 
+    <button id="start-button">Start Game</button>
 </div>
 
 <div id="game-container">
@@ -24,6 +32,7 @@
       <p>Score: <span id="score">0</span></p>
       <p>Lives: <span id="lives">3</span></p>
     </div>
+
     <!-- #game-screen is initially hidden using CSS style display: none -->
     <div id="game-screen"></div>
   </div>
@@ -34,7 +43,7 @@
     <img src="./images/logo.png" alt="catch me if you can logo" class="logo-img" />
     <h1>Game Over</h1>
     <br />
-    <button id="restart-button">Restart</button>
+    <button id="restart-button">Restart Game</button>
   </div>
 
 
