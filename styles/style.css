@@ -65,9 +65,9 @@ body {
     padding: 20px 0px;
     overflow: hidden;
     position: relative;
-    background-image: url(../images/floor.png);
+    background-image: url(../images/rug.jpg);
     background-size: cover;
-    
+  
   }
   
   @keyframes slide {
@@ -92,3 +92,15 @@ body {
     justify-content: center;
   }
 
+  .spin {
+    -webkit-animation: spin 0.2s linear;
+  }
+  
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }

@@ -5,7 +5,7 @@ class Obstacle{
         this.randomIndex = Math.floor(Math.random() * this.positionsArr.length)
         this.left = this.positionsArr[this.randomIndex]
         this.top = -100
-        this.width = 270
+        this.width = 200
         this.height = 250
         this.element = document.createElement("img")
         this.element.src = "../images/evilVc.png"
@@ -20,7 +20,6 @@ class Obstacle{
     move(){ 
         this.top += 1
         this.updatePosition()
-    
     }
 
     updatePosition(){

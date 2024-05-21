@@ -1,7 +1,7 @@
 class Bonus{
     constructor(gameScreen){
         this.gameScreen = gameScreen
-        this.positionsArr = [200, 400]
+        this.positionsArr = [100, 300]
         this.randomIndex = Math.floor(Math.random() * this.positionsArr.length)
         this.left = this.positionsArr[this.randomIndex]
         this.top = -100
@@ -18,14 +18,12 @@ class Bonus{
     }
 
     moveBonus(){ 
-        this.top += 1
-        this.updatePosition()
-    
+        this.top += 2
+        this.updatePositionBonus()
     }
 
     updatePositionBonus(){
         this.element.style.top = `${this.top}px`
-        
     }
 
 }
