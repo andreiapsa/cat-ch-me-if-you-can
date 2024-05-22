@@ -23,7 +23,7 @@ class Game {
         this.isGameOver = false 
         this.gameIntervalId = null 
         this.gameLoopFrequency = [1000/180] 
-        this.themeSound = new Audio ("../themesong.wav")
+        this.themeSound = new Audio ("./themesong.wav")
         this.themeSound.volume = 0.01
         
     }

@@ -15,11 +15,11 @@ class Player{
         this.element.style.height = `${this.height}px`
         this.element.style.width = `${this.width}px`
         this.gameScreen.appendChild(this.element)
-        this.hissSound = new Audio ("../hiss.mp3")
+        this.hissSound = new Audio ("./hiss.mp3")
         this.hissSound.volume = 0.1
-        this.meowSound = new Audio ("../meow.mp3")
+        this.meowSound = new Audio ("./meow.mp3")
         this.meowSound.volume = 0.1
-        this.superMeowSound = new Audio ("../supermeow.wav")
+        this.superMeowSound = new Audio ("./supermeow.wav")
         this.superMeowSound.volume = 0.02
 
     }
