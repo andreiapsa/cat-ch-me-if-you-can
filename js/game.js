@@ -11,7 +11,7 @@ class Game {
             100, 
             700, 
             300, 
-            "../images/neji-cat.png")
+            "./images/neji-cat.png")
         this.height = 750
         this.width = 600
         this.obstacles = [new Obstacle (this.gameScreen)]

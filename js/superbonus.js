@@ -8,7 +8,7 @@ class SuperBonus{
         this.width = 20
         this.height = 60
         this.element = document.createElement("img")
-        this.element.src = "../images/catwoman.png"
+        this.element.src = "./images/catwoman.png"
         this.element.style.position = "absolute" 
         this.element.style.top = `${this.top}px`
         this.element.style.left = `${this.left}px`
