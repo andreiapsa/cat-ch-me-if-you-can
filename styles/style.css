@@ -1,126 +1,127 @@
 body {
-    padding: 0;
-    text-align: center;
-    background-color: #9FCCE6;
-  }
-  
-  #game-intro {
-    padding: 40px 0px;
-  }
+  padding: 0;
+  text-align: center;
+  background-color: #9FCCE6;
+}
 
-  .logo img {
-    width: 350px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  #instructions-h2{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    margin-top: 40px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  #instructions-intro{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px
-  }
+#game-intro {
+  padding: 40px 0px;
+}
 
-  #instructions-list{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
-    display: table;
-    margin: 0 auto;
-    text-align: left;
-  }
+#game-screen {
+  display: none;
+  align-content: center;
+  padding: 20px 0px;
+  overflow: hidden;
+  position: relative;
+  background-image: url(../images/rug.jpg);
+  background-size: cover;
+  justify-content: center;
+}
 
-  #game-container {
-    width: 100vw;
-    height: 10vw;
-    display: flex;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
-  }
+#game-end {
+  display: none;
+}
 
-  body button {
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    background-color: #1985C4;
-    color: #fff;
-    padding: 20px 50px;
-    border: 0;
-    box-shadow: 0;
-    border-radius: 10px;
-    margin-top: 100px;
-    margin-bottom: 20px;
-  }
-  
-  #game-screen {
-    display: none;
-    align-content: center;
-    padding: 20px 0px;
-    overflow: hidden;
-    position: relative;
-    background-image: url(../images/rug.jpg);
-    background-size: cover;
-  
-  }
-  
-  @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  }
-  
-  #game-end {
-    display: none;
-  }
-  
-  #jugdy-neji {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-   
-  }
+.logo-img {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+}
 
-  #gameover {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    margin-top: 40px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+#instructions-h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  #neji-is-judging{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px
-  }
+#instructions-intro {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
 
-  #restart-button{
-    margin-bottom: 200px;
-  }
+#instructions-list {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  display: table;
+  margin: 0 auto;
+  text-align: left;
+}
 
-  .spin {
-    -webkit-animation: spin 0.2s linear;
+#start-button {
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  background-color: #1985C4;
+  color: #fff;
+  padding: 20px 50px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+#restart-button{
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  background-color: #1985C4;
+  color: #fff;
+  padding: 20px 50px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+#game-stats {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  justify-content: right;
+  text-align: center;
+  display: none;
+}
+
+#game-stats-end {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  justify-content: center;
+  text-align: center;
+}
+
+#jugdy-neji-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 140px;
+}
+
+#gameover {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#neji-is-judging{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.spin {
+  -webkit-animation: spin 0.2s linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
   }
-  
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-    }
+  100% {
+    -webkit-transform: rotate(360deg);
   }
+}
 

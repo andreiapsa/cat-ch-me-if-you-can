@@ -42,11 +42,11 @@ class Player{
           this.left = 620 - this.width
         }
 
-        if(this.top <= 5){
-          this.top = 5
+        if(this.top <= 10){
+          this.top = 10
         }
-        if (this.top >= 835 - this.height){
-          this.top = 835 - this.height
+        if (this.top >= 780 - this.height){
+          this.top = 780 - this.height
         }
     }
 

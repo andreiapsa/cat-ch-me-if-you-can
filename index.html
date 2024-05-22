@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css" />
-    <title>Catch me if you can</title>
+    <title>CATch me if you can</title>
 </head>
 <body>
     <main>
 <!-- #game-intro is initially shown on the game start screen --> 
 <div id="game-intro">
-    <img src="./images/logo.png" alt="catch me if you can logo" class="logo img" />
+    
+    <img src="./images/logo.png" alt="catch me if you can logo" id="logo img" />
     <br />
+    
     <h2 id="instructions-h2">Instructions</h2>
-    <and id="instructions-intro">Neji, like every cat, <b>hates</b> vacuum cleaners and needs <b>your help</b> to run away from them.</p>
+    
+    <p id="instructions-intro"><b>Neji</b>, like every cat, <b>hates</b> vacuum cleaners 
+        <br /> and needs <b>your help</b> to run away from them.</p>
+    
     <ul id="instructions-list">
         <li><b>Use the arrows</b> (top, bottom, left and right) to move around</li>  
         <li>Neji needs to <b>stay away from the vacuum cleaners</b></li> 
@@ -23,33 +28,49 @@
         <li>If Neji eats a can of food, he'll <b>get 3 points</b></li>
         <li>Every now and then you'll see a <b>surprise super bonus</b></li>
         <li>If Neji catches the super bonus, he'll <b>get 2 extra lives and 10 points</b></li>
-        <li>The game is over when Neji has no more lives</li> <b></b> <b></b>
+        <li>You start the game with <b>3 lives</b>. Use them wisely.</li> 
+        <li>The game is over when Neji has <b>no more lives</b>.</li>
     </ul>
 
     <button id="start-button">Start Game</button>
+
+    </div>
+
 </div>
 
 <div id="game-container">
-    <div>
-        <h2>Stats</h2>
-        <p>Score: <span id="score">0</span></p>
-        <p>Lives: <span id="lives">3</span></p>
-    </div>
 
     <!-- #game-screen is initially hidden using CSS style display: none -->
     <div id="game-screen"></div>
-  </div>
+        <div id="game-stats">
+            <h2>Stats</h2>
+            <p>Score: <span id="score">0</span></p>
+            <p>Lives: <span id="lives">3</span></p>
+        </div>
+        
+</div>
 
 
 <!-- #game-end is initially hidden using CSS style display: none -->
 <div id="game-end">
+
     <h1 id="gameover">Oops! Game Over</h1>
-    <img src="./images/judgyNeji.jpg" alt="judgy Neji judging you" id="judgy-neji" />
+    
+    <img src="./images/judgyNeji.jpg" alt="judgy Neji judging you" id="judgy-neji-img" />
     <br />
+    
     <p id="neji-is-judging">Neji is not happy.
         <br />
         <b>Play again!</b> </p>
+    
     <button id="restart-button">Restart Game</button>
+
+    <div id="game-stats-end">
+        <h2>Stats</h2>
+        <p>Score: <span id="score-end">0</span></p>
+        <p>Lives: <span id="lives-end">3</span></p>
+    </div>
+    </div>
   </div>
 
 

@@ -3,6 +3,8 @@ class Game {
         this.startScreen = document.getElementById("game-intro")
         this.gameScreen = document.getElementById("game-screen")
         this.gameEndScreen = document.getElementById("game-end")
+        this.gameStats = document.getElementById("game-stats")
+        this.gameStatsEnd = document.getElementById("game-stats-end")
         this.player = new Player (
             this.gameScreen, 
             100, 
@@ -10,14 +12,14 @@ class Game {
             700, 
             300, 
             "../images/neji-cat.png")
-        this.height = 800
+        this.height = 750
         this.width = 600
         this.obstacles = [new Obstacle (this.gameScreen)]
         this.bonus = [new Bonus (this.gameScreen)]
         this.superBonus = []
         this.counter = 0
         this.score = 0
-        this.lives = 1
+        this.lives = 3
         this.isGameOver = false 
         this.gameIntervalId = null 
         this.gameLoopFrequency = [1000/180] 
@@ -31,6 +33,8 @@ start(){
     this.gameScreen.style.width = `${this.width}px`
     this.startScreen.style.display = "none" 
     this.gameScreen.style.display = "block"
+    this.gameStats.style.display = "block"
+    this.gameStatsEnd.style.display = "none"
     this.gameIntervalId = setInterval(() =>{
         this.gameLoop()
         this.themeSound.play()
@@ -52,6 +56,8 @@ update(){
    
     const livesElement = document.getElementById("lives")
     const scoreElement = document.getElementById("score")
+    const livesEndElement = document.getElementById("lives-end")
+    const scoreEndElement = document.getElementById("score-end")
     
     if (this.counter % 2000 === 0){
         this.superBonus.push(new SuperBonus(this.gameScreen))
@@ -115,7 +121,7 @@ update(){
         if (this.lives === 0){
             this.isGameOver = true
     }
-    } else if (oneSuperBonus.left > 700){
+    } else if (oneSuperBonus.left > 600){
         this.superBonus.splice(oneSuperBonusIndex, 1)
         oneSuperBonus.element.remove()
     }
@@ -123,6 +129,8 @@ update(){
         })
         scoreElement.innerText = this.score
         livesElement.innerText = this.lives
+        scoreEndElement.innerText = this.score
+        livesEndElement.innerText = this.lives
 
     }
 
@@ -130,6 +138,8 @@ update(){
 gameOver(){
     this.gameScreen.style.display = "none"
     this.gameEndScreen.style.display = "block"
+    this.gameStats.style.display = "none"
+    this.gameStatsEnd.style.display = "block"
 }
 
 }
