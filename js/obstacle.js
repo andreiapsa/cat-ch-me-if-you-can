@@ -26,5 +26,6 @@ class Obstacle{
         this.element.style.top = `${this.top}px`
         
     }
+    
 
 }

@@ -16,10 +16,12 @@ class Game {
         this.bonus = [new Bonus (this.gameScreen)]
         this.superBonus = [new SuperBonus (this.gameScreen)]
         this.score = 0
-        this.lives = 5
+        this.lives = 1
         this.isGameOver = false 
         this.gameIntervalId = null 
         this.gameLoopFrequency = [1000/180] 
+        this.themeSound = new Audio ("../themesong.wav")
+        this.themeSound.volume = 0.01
     }
 
 start(){
@@ -29,6 +31,7 @@ start(){
     this.gameScreen.style.display = "block"
     this.gameIntervalId = setInterval(() =>{
         this.gameLoop()
+        this.themeSound.play()
     }, this.gameLoopFrequency)
 
 }
@@ -39,6 +42,11 @@ gameLoop(){
         clearInterval(this.gameIntervalId) 
         this.gameOver()
     }
+}
+
+createSuperBonus(){
+    const randomInterval = Math.floor(Math.random() * (40 - 10 + 1 ) + 10 * 1000)
+    this.superBonus.push(new SuperBonus(this.gameScreen))
 }
 
 update(){
@@ -74,6 +82,8 @@ update(){
     this.bonus.forEach((oneBonus, oneBonusIndex)=>{
         oneBonus.moveBonus()
 
+
+
         const bonusHit = this.player.didHitBonus(oneBonus)
         if (bonusHit){
             this.bonus.splice(oneBonusIndex, 1);
@@ -96,16 +106,16 @@ update(){
         const superBonusHit = this.player.didHitSuperBonus(oneSuperBonus)
         if (superBonusHit){
             this.superBonus.splice(oneSuperBonusIndex, 1);
-            superBonus.element.remove()
+            oneSuperBonus.element.remove()
             this.score += 10
             this.lives += 2
             this.superBonus.push(new SuperBonus (this.gameScreen))
             if (this.lives === 0){
                 this.isGameOver = true
         }
-        } else if (oneSuperBonus.left > 600){
+        } else if (oneSuperBonus.left > 700){
             this.superBonus.splice(oneSuperBonusIndex, 1)
-            superBonus.element.remove()
+            oneSuperBonus.element.remove()
             this.superBonus.push(new SuperBonus(this.gameScreen))
         }
 
@@ -114,7 +124,6 @@ update(){
         livesElement.innerText = this.lives
 
     }
-    
 
 
 gameOver(){

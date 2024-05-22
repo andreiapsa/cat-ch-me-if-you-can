@@ -1,9 +1,9 @@
 class SuperBonus{
     constructor(gameScreen){
         this.gameScreen = gameScreen
-        this.positionsArr = [400, 500]
+        this.positionsArr = [100, 400]
         this.randomIndex = Math.floor(Math.random() * this.positionsArr.length)
-        this.left = 100
+        this.left = 0
         this.top = this.positionsArr[this.randomIndex]
         this.width = 70
         this.height = 200
@@ -25,5 +25,7 @@ class SuperBonus{
     updatePositionSuperBonus(){
         this.element.style.left = `${this.left}px`
     }
+
+    
 
 }
