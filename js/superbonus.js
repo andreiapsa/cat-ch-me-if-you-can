@@ -5,8 +5,8 @@ class SuperBonus{
         this.randomIndex = Math.floor(Math.random() * this.positionsArr.length)
         this.left = 0
         this.top = this.positionsArr[this.randomIndex]
-        this.width = 70
-        this.height = 200
+        this.width = 20
+        this.height = 60
         this.element = document.createElement("img")
         this.element.src = "../images/catwoman.png"
         this.element.style.position = "absolute" 

@@ -14,7 +14,8 @@ class Game {
         this.width = 600
         this.obstacles = [new Obstacle (this.gameScreen)]
         this.bonus = [new Bonus (this.gameScreen)]
-        this.superBonus = [new SuperBonus (this.gameScreen)]
+        this.superBonus = []
+        this.counter = 0
         this.score = 0
         this.lives = 1
         this.isGameOver = false 
@@ -22,6 +23,7 @@ class Game {
         this.gameLoopFrequency = [1000/180] 
         this.themeSound = new Audio ("../themesong.wav")
         this.themeSound.volume = 0.01
+        
     }
 
 start(){
@@ -42,11 +44,7 @@ gameLoop(){
         clearInterval(this.gameIntervalId) 
         this.gameOver()
     }
-}
-
-createSuperBonus(){
-    const randomInterval = Math.floor(Math.random() * (40 - 10 + 1 ) + 10 * 1000)
-    this.superBonus.push(new SuperBonus(this.gameScreen))
+    this.counter++
 }
 
 update(){
@@ -55,6 +53,10 @@ update(){
     const livesElement = document.getElementById("lives")
     const scoreElement = document.getElementById("score")
     
+    if (this.counter % 2000 === 0){
+        this.superBonus.push(new SuperBonus(this.gameScreen))
+    }
+
     this.obstacles.forEach((oneObstacle, oneObstacleIndex)=>{
         oneObstacle.move()
      
@@ -100,24 +102,23 @@ update(){
         }
         })
 
-        this.superBonus.forEach((oneSuperBonus, oneSuperBonusIndex)=>{
-            oneSuperBonus.moveSuperBonus()
+    this.superBonus.forEach((oneSuperBonus, oneSuperBonusIndex)=>{
+        oneSuperBonus.moveSuperBonus()
 
-        const superBonusHit = this.player.didHitSuperBonus(oneSuperBonus)
-        if (superBonusHit){
-            this.superBonus.splice(oneSuperBonusIndex, 1);
-            oneSuperBonus.element.remove()
-            this.score += 10
-            this.lives += 2
-            this.superBonus.push(new SuperBonus (this.gameScreen))
-            if (this.lives === 0){
-                this.isGameOver = true
-        }
-        } else if (oneSuperBonus.left > 700){
-            this.superBonus.splice(oneSuperBonusIndex, 1)
-            oneSuperBonus.element.remove()
-            this.superBonus.push(new SuperBonus(this.gameScreen))
-        }
+    const superBonusHit = this.player.didHitSuperBonus(oneSuperBonus)
+    if (superBonusHit){
+        this.superBonus.splice(oneSuperBonusIndex, 1);
+        oneSuperBonus.element.remove()
+        this.score += 10
+        this.lives += 2
+        this.superBonus.push(new SuperBonus (this.gameScreen))
+        if (this.lives === 0){
+            this.isGameOver = true
+    }
+    } else if (oneSuperBonus.left > 700){
+        this.superBonus.splice(oneSuperBonusIndex, 1)
+        oneSuperBonus.element.remove()
+    }
 
         })
         scoreElement.innerText = this.score
